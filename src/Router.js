@@ -2,24 +2,24 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // 송아영님의 컴포넌트
-import aLogin from './pages/songayoung/Login/Login';
-import aMain from './pages/songayoung/Main/Main';
+import aLogin from './pages/songayoung/Login/aLogin';
+import aMain from './pages/songayoung/Main/aMain';
 
 // 윤수민님의 컴포넌트
-import suLogin from './pages/yunsumin/Login/Login';
-import suMain from './pages/yunsumin/Main/Main';
+import suLogin from './pages/yunsumin/Login/suLogin';
+import suMain from './pages/yunsumin/Main/suMain';
 
 // 강지민님의 컴포넌트
-import jiLogin from './pages/kangjimin/Login/Login';
-import jiMain from './pages/kangjimin/Main/Main';
+import jiLogin from './pages/kangjimin/Login/jiLogin';
+import jiMain from './pages/kangjimin/Main/jiMain';
 
 // 이혜원님의 컴포넌트
-import hyeLogin from './pages/leehyewon/Login/Login';
-import hyeMain from './pages/leehyewon/Main/Main';
+import hyeLogin from './pages/leehyewon/Login/hyeLogin';
+import hyeMain from './pages/leehyewon/Main/hyeMain';
 
 // 이상윤님의 컴포넌트
-import sangLogin from './pages/leesangyoon/Login/Login';
-import sangMain from './pages/leesangyoon/Main/Main';
+import sangLogin from './pages/leesangyoon/Login/sangLogin';
+import sangMain from './pages/leesangyoon/Main/sangMain';
 
 const Router = () => {
   return (
