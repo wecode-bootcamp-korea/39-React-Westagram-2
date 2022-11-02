@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function hyeLogin() {
+export default function AyLogin() {
   return <h1>HappyLogin</h1>;
 }
