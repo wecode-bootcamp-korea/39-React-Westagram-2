@@ -1,0 +1,132 @@
+@import '../../styles/variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* first box */
+.first-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 400px;
+  border: 1px solid #dbdbdb;
+  background-color: #ffffff;
+}
+
+.first-box__title {
+  margin: 40px 0px;
+  font-family: 'Lobster', cursive;
+  font-size: 45px;
+}
+
+.first-box__login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-box__login-form__input {
+  width: 270px;
+  height: 40px;
+  margin-top: 6px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+
+.first-box__login-form__input::placeholder {
+  padding-left: 10px;
+}
+
+.first-box__login-form__btn {
+  width: 276px;
+  height: 30px;
+  margin: 15px 0px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0095f6;
+  color: white;
+  font-weight: 700;
+}
+
+.first-box__forget-pw {
+  margin-top: 80px;
+  font-size: 12px;
+}
+
+.first-box__forget-pw a {
+  color: #00376b;
+  text-decoration: none;
+}
+
+/* second box */
+.second-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 65px;
+  margin: 10px 0px;
+  border: 1px solid #dbdbdb;
+  background-color: #ffffff;
+}
+
+.second-box span {
+  font-size: 15px;
+}
+
+.second-box span a {
+  color: #0095f6;
+  text-decoration: none;
+}
+
+/* third box */
+.third-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 110px;
+  margin: 15px 0px;
+}
+
+.third-box__text {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.apps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apps__app-box {
+  width: 135px;
+  height: 40px;
+  margin: 10px 0px;
+  padding: 0px 5px;
+}
+
+/* Etc */
+.opacity {
+  opacity: 0.6;
+}

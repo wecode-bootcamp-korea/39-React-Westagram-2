@@ -2,12 +2,55 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
+// const loginId = document.querySelector("#input-id");
+// const loginPw = document.querySelector("#input-pw");
+// const loginBtn = document.querySelector(".first-box__login-form__btn");
+
+// const opacityClass = "opacity";
+
+// let isIdVaild = false;
+// let isPwVaild = false;
+// let allVaild = false;
+
+// function btnActivate() {
+//   if (isIdVaild && isPwVaild) {
+//     loginBtn.classList.remove(opacityClass);
+//     allVaild = true;
+//   } else {
+//     loginBtn.classList.add(opacityClass);
+//     allVaild = false;
+//   }
+// }
+
+// function handleBtnActivateById(event) {
+//   const idValue = event.target.value;
+//   isIdVaild = idValue.indexOf("@") !== -1 ? true : false;
+//   btnActivate();
+// }
+
+// function handleBtnActivateByPw(event) {
+//   const PwValue = event.target.value;
+//   isPwVaild = PwValue.length >= 5 ? true : false;
+//   btnActivate();
+// }
+
+// function handleBtnClick() {
+//   if (allVaild) {
+//     window.location.href = "main.html";
+//     useNavigate('/leesangyoon.main');
+//   }
+// }
+
+// loginId.addEventListener("input", handleBtnActivateById);
+// loginPw.addEventListener("input", handleBtnActivateByPw);
+// loginBtn.addEventListener("click", handleBtnClick);
+
 export default function Login() {
   const navigate = useNavigate();
 
   return (
     <>
-      <h1>Login</h1>
+      {/* <h1>Login</h1>
       <div>
         <h2>Sign Up</h2>
         <button
@@ -17,7 +60,7 @@ export default function Login() {
         >
           Main으로 이동
         </button>
-      </div>
+      </div> */}
 
       <div className="container">
         <div className="first-box">
@@ -46,21 +89,21 @@ export default function Login() {
 
         <div className="second-box">
           <span>
-            계정이 없으신가요? <a href="">가입하기</a>
+            계정이 없으신가요? <a href="#">가입하기</a>
           </span>
         </div>
 
         <div className="third-box">
-          <span className="third-box__text">앱을 다운로드하세요.</span>
+          <span className="app-download-text">앱을 다운로드하세요.</span>
           <div className="apps">
             <img
               alt="App Store"
-              className="apps__app-box"
+              className="app-box"
               src="https://static.cdninstagram.com/rsrc.php/v3/yi/r/cWx_hQBPmbo.png"
             />
             <img
               alt="Google Play"
-              className="apps__app-box"
+              className="app-box"
               src="https://static.cdninstagram.com/rsrc.php/v3/ye/r/UtJtFmFLCiD.png"
             />
           </div>
