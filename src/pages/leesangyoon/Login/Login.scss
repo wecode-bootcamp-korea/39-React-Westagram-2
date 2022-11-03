@@ -6,7 +6,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fafafa;
+  background-color: $BgColor;
 }
 
 /* first box */
@@ -23,8 +23,8 @@ body {
     align-items: center;
     width: 350px;
     height: 400px;
-    border: 1px solid #dbdbdb;
-    background-color: #ffffff;
+    border: 1px solid $borderColor;
+    background-color: white;
 
     &__title {
       margin: 40px 0px;
@@ -43,9 +43,9 @@ body {
       width: 270px;
       height: 40px;
       margin-top: 6px;
-      border: 1px solid #dbdbdb;
+      border: 1px solid $borderColor;
       border-radius: 5px;
-      background-color: #fafafa;
+      background-color: $BgColor;
     }
 
     &__login-form__input::placeholder {
@@ -82,8 +82,8 @@ body {
   width: 350px;
   height: 65px;
   margin: 10px 0px;
-  border: 1px solid #dbdbdb;
-  background-color: #ffffff;
+  border: 1px solid $borderColor;
+  background-color: white;
 
   span {
     font-size: 15px;

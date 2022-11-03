@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: space-around;
   width: 100vw;
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid $borderColor;
   background-color: white;
 
   div {
@@ -51,8 +51,8 @@
     &__input {
       width: 15vw;
       height: 2.3vh;
-      border: 1px solid #dbdbdb;
-      background-color: #fafafa;
+      border: 1px solid $borderColor;
+      background-color: $BgColor;
     }
 
     &__input:focus {
@@ -60,7 +60,7 @@
     }
 
     &__input::placeholder {
-      color: #dbdbdb;
+      color: $borderColor;
       text-align: center;
     }
   }
@@ -83,7 +83,13 @@
   justify-content: center;
   height: 120vh;
   padding-left: 10vw;
-  background-color: #fafafa;
+  background-color: $BgColor;
+
+  // 두 프로필 사진에 일괄적으로 적용하는 스타일
+  .profile-pic {
+    border: 2px solid #ff5a9a;
+    border-radius: 50%;
+  }
 
   &__feeds {
     display: flex;
@@ -98,7 +104,7 @@
     width: 400px;
     height: 100px;
     margin-top: 40px;
-    border: 1px solid #dbdbdb;
+    border: 1px solid $borderColor;
     background-color: white;
 
     div {
@@ -120,7 +126,7 @@
   &__article {
     width: 400px;
     margin-top: 40px;
-    border: 1px solid #dbdbdb;
+    border: 1px solid $borderColor;
     background-color: white;
 
     // main__article__header
@@ -134,11 +140,6 @@
         justify-content: center;
         width: 60px;
         height: 60px;
-      }
-
-      .profile-pic {
-        border: 2px solid #ff5a9a;
-        border-radius: 50%;
       }
 
       &__nickname {
@@ -214,7 +215,7 @@
     &__comment-input {
       display: flex;
       height: 50px;
-      border-top: 0.5px solid #dbdbdb;
+      border-top: 0.5px solid $borderColor;
     }
 
     .smile-icon {
@@ -283,7 +284,7 @@
       &__pic img {
         width: 50px;
         margin: 10px;
-        border: 1px solid #dbdbdb;
+        border: 1px solid $borderColor;
         border-radius: 50%;
       }
 
@@ -312,7 +313,7 @@
 
       &__change-btn button {
         border: none;
-        background-color: #fafafa;
+        background-color: $BgColor;
         color: #0395f6;
       }
     }

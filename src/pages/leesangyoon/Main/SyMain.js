@@ -108,7 +108,7 @@ export default function SyMain() {
               <img
                 className="profile-pic"
                 alt="main-pic"
-                src="39-react-westagram-2/public/images/leesangyoon/my-profile.jpeg"
+                src="/images/leesangyoon/my-profile.jpeg"
                 width="50"
               />
               <span>sangyoonlee1231</span>
@@ -121,7 +121,7 @@ export default function SyMain() {
                 <img
                   className="profile-pic"
                   alt="main-pic"
-                  src="../../../../public/images/leesangyoon/my-profile.jpeg"
+                  src="/images/leesangyoon/my-profile.jpeg"
                   width="40px"
                 />
               </div>
@@ -135,7 +135,7 @@ export default function SyMain() {
               <img
                 id="media"
                 alt="main-pic"
-                src="img/main_article/article-pic.jpeg"
+                src="/images/leesangyoon/article-pic.jpeg"
               />
             </div>
 
@@ -144,19 +144,19 @@ export default function SyMain() {
               <img
                 className="reaction-icons"
                 alt="comment"
-                src="img/icons/comment.png"
+                src="/images/leesangyoon/icons/comment.png"
                 width="23"
               />
               <img
                 className="reaction-icons"
                 alt="message"
-                src="img/icons/message.png"
+                src="/images/leesangyoon/icons/message.png"
                 width="23"
               />
               <img
                 id="reaction-bookmark-icon"
                 alt="message"
-                src="img/icons/bookmark.png"
+                src="/images/leesangyoon/icons/bookmark.png"
                 width="28"
               />
             </div>
@@ -172,7 +172,11 @@ export default function SyMain() {
 
             <div className="main__article__comment-input">
               <div className="smile-icon">
-                <img id="smile" alt="smile" src="img/icons/smile.png" />
+                <img
+                  id="smile"
+                  alt="smile"
+                  src="/images/leesangyoon/icons/smile.png"
+                />
               </div>
               <div className="comment-form">
                 <form>
@@ -189,7 +193,7 @@ export default function SyMain() {
             <div className="main__right__profile__pic">
               <img
                 alt="profile-right"
-                src="img/main_article/my-profile.jpeg"
+                src="/images/leesangyoon/my-profile.jpeg"
                 width="50"
               />
             </div>
