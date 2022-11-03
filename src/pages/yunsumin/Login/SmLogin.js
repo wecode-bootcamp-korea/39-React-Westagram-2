@@ -1,14 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './SmLogin.scss';
-import { Link } from 'react-router-dom';
-
 function SmLogin() {
+  const navigate = useNavigate();
+  const onClickButton = () => {
+    navigate('/yunsumin/Main');
+  };
+
   return (
     <div className="loginPage">
       <div className="mainLogin">
         <div className="logo">
           <h1>Westagram</h1>
         </div>
+
         <div className="loginbar">
           <form>
             <input
@@ -17,19 +22,21 @@ function SmLogin() {
               placeholder="전화번호, 사용자 이름 또는 이메일"
             />
             <input className="pwInput" type="password" placeholder="비밀번호" />
-            <Link
-              to="/yunsumin/main"
+            <button
               className="login-bt btstyle"
               type="submit"
+              onClick={onClickButton}
             >
               로그인
-            </Link>
+            </button>
           </form>
+
           <div className="line">
             <div className="firstLine" />
             <h5>또는</h5>
             <div className="secondLine" />
           </div>
+
           <div className="loginToFb">
             <a href="https://www.facebook.com/">
               <span>
@@ -43,6 +50,7 @@ function SmLogin() {
               Facebook으로 로그인
             </a>
           </div>
+
           <div className="pass">
             <a href="https://www.instagram.com/accounts/password/reset/">
               비밀번호를 잊으셨나요?
