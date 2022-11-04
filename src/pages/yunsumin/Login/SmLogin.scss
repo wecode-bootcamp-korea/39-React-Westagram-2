@@ -55,7 +55,21 @@
     height: 212px;
   }
 
-  .login-bt {
+  .loginBt {
+    position: absolute;
+    top: 92px;
+    left: 45px;
+    width: 260px;
+    height: 30px;
+    padding: 5px 9px;
+    border-radius: 5px;
+    background-color: #b3dffc;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .loginActive {
     position: absolute;
     top: 92px;
     left: 45px;
@@ -181,9 +195,5 @@
   .doun a {
     width: 135px;
     height: 41px;
-  }
-
-  .btstyle {
-    opacity: 30%;
   }
 }

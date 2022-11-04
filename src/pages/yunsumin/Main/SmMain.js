@@ -200,7 +200,7 @@ function SmMain() {
                       className="commentImg"
                       src="/images/yunsumin/smile.png"
                     />
-                    <form onsubmit="return false">
+                    <form onSubmit={e => e.preventDefault()}>
                       <input
                         className="commentInput1"
                         placeholder="댓글입력..."
@@ -291,7 +291,7 @@ function SmMain() {
                       className="commentImg"
                       src="/images/yunsumin/smile.png"
                     />
-                    <form onsubmit="return false">
+                    <form onSubmit={e => e.preventDefault()}>
                       <input
                         className="commentInput2"
                         placeholder="댓글입력..."
@@ -370,7 +370,7 @@ function SmMain() {
               <div className="aa">
                 <img
                   alt="고양이3 이미지"
-                  class="catImg"
+                  className="catImg"
                   src="/images/yunsumin/cat_3.jpg"
                 />
               </div>
