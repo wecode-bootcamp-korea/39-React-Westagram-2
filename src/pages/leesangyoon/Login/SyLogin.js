@@ -8,8 +8,6 @@ let isPwVaild = false;
 export default function Login() {
   const navigate = useNavigate();
   const [isAllVaild, setIsAllVaild] = useState(false);
-  // const [isIdVaild, setIsIdVaild] = useState(false);
-  // const [isPwVaild, setIsPwVaild] = useState(false);
 
   function handleBtnActivate() {
     if (isIdVaild && isPwVaild) {
@@ -28,14 +26,12 @@ export default function Login() {
   function handleBtnActivateById(event) {
     const idValue = event.target.value;
     isIdVaild = idValue.indexOf('@') !== -1 ? true : false;
-    // setIsIdVaild(idValue.indexOf('@') !== -1 ? true : false);
     handleBtnActivate(event);
   }
 
   function handleBtnActivateByPw(event) {
     const PwValue = event.target.value;
     isPwVaild = PwValue.length >= 5 ? true : false;
-    // setIsPwVaild(PwValue.length >= 5 ? true : false);
     handleBtnActivate(event);
   }
 
