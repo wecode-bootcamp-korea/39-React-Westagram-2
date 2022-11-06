@@ -50,7 +50,11 @@ function JmLogin() {
         </div>
       </div>
       <div className="loginBtn">
-        <button className="button" disabled onClick={goMain}>
+        <button
+          className={btnActive ? 'activeButton' : 'button'}
+          disabled={idValue === '' || pwValue < 5 ? true : false}
+          onClick={goMain}
+        >
           로그인
         </button>
       </div>
