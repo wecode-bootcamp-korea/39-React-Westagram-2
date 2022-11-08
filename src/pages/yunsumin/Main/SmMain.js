@@ -203,7 +203,7 @@ function SmMain() {
                       />
                     </div>
                     <p>console_0님 외</p>
-                    <b className="lieckr">10264명</b>
+                    <b className="lieckr">1023명</b>
                     <p>이 좋아합니다</p>
                   </div>
                   <div className="title">
