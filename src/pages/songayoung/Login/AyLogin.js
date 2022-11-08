@@ -1,36 +1,7 @@
 import React from 'react';
-import "./Login.scss";
+import './Login.scss';
 
-function LoginBtn() {
-  const inputId = document.querySelector("#id");
-  const inputPassword = document.querySelector("#password");
-  const button = document.querySelector(".btn");
-
-  let idValue = inputId.value;
-  let passwordValue = inputPassword.value;
-
-  if (idValue.length > 0 && passwordValue.length > 0) {
-    button.disabled = false;
-    button.style.cursor = "pointer";
-    button.style.backgroundColor = "#1c7ed6";
-  } else {
-    button.disabled = true;
-    button.style.cursor = "default";
-    button.style.backgroundColor = "#bfdffd";
-  }
-
-  return (
-    <div className="buttonBox">
-      <button type="button" className="btn" disabled="disabled">
-        <span>로그인</span>
-      </button>
-    </div>
-  );
-}
-
-export default function AyLogin() {
-  //함수영역
-  const navigate = useNavigate();
+function AyLogin() {
   return (
     <>
       <title>Westagram</title>
@@ -49,7 +20,11 @@ export default function AyLogin() {
               <div className="inputBox">
                 <input id="password" type="password" placeholder="비밀번호" />
               </div>
-              <LoginBtn></LoginBtn>
+              <div className="buttonBox">
+                <button type="button" className="btn" disabled="disabled">
+                  <span>로그인</span>
+                </button>
+              </div>
             </form>
             <div className="passwordForget">
               <a href>
@@ -62,3 +37,5 @@ export default function AyLogin() {
     </>
   );
 }
+
+export default AyLogin;
