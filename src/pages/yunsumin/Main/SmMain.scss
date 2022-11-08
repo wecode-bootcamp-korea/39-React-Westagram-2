@@ -121,7 +121,7 @@
     flex-flow: row nowrap;
 
     width: 820px;
-    height: 1550px;
+    height: 900px;
     margin: auto;
   }
 
@@ -208,7 +208,9 @@
   .userName p {
     width: 57px;
     height: 25px;
+    margin-top: 5px;
     font-size: 13px;
+    font-weight: 550;
     text-align: center;
   }
 
@@ -261,6 +263,7 @@
 
     width: 368px;
     height: 40px;
+    font-weight: 550;
   }
 
   .feedName {
@@ -393,6 +396,11 @@
     width: 470px;
     height: 25px;
     padding: 16px;
+    font-size: 13px;
+  }
+
+  .lickView b {
+    font-weight: 550;
   }
 
   .viewImgDiv {
@@ -476,28 +484,22 @@
   }
 
   .posting1 {
-    opacity: 30%;
-    color: #0095f6;
+    color: #b3dffc;
     font-size: 15px;
+    font-weight: 600;
   }
 
   .posting2 {
-    opacity: 30%;
     color: #0095f6;
     font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
   }
 
   .postingOk {
     opacity: 100%;
     color: #0095f6;
     font-size: 15px;
-  }
-
-  .secondFeeds {
-    width: 470px;
-    margin-top: 12px;
-    border: 1px solid #dbdbdb;
-    border-radius: 8px;
   }
 
   .secondSection {
@@ -532,6 +534,14 @@
     margin-right: 90px;
   }
 
+  .farowText b {
+    font-weight: 550;
+  }
+
+  .farowText p {
+    margin-top: 5px;
+  }
+
   .suggestion {
     display: flex;
     align-items: center;
@@ -562,6 +572,14 @@
     margin-left: 3px;
   }
 
+  .dheText b {
+    font-weight: 550;
+  }
+
+  .dheText p {
+    margin-top: 5px;
+  }
+
   .catImg {
     width: 40px;
     height: 40px;
@@ -583,16 +601,21 @@
     cursor: pointer;
   }
 
-  .end {
+  .asideBar {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
     margin-top: 20px;
+  }
+
+  .asideBar li {
+    margin-right: 5px;
+    margin-bottom: 2px;
+    color: #dbdbdb;
   }
 
   .end2 {
     margin-top: 20px;
-  }
-
-  .end b {
-    color: #dbdbdb;
   }
 
   .end2 {
@@ -654,5 +677,29 @@
   .hartBack {
     width: 14px;
     background-image: url('../../../assets/yunsumin/miniblack_heart.png');
+  }
+
+  .commentMain {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .usersName {
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 550;
+  }
+
+  .usersComment {
+    margin-left: 5px;
+    font-weight: 500;
+  }
+
+  .commentHeart {
+    width: 15px;
+    height: 15px;
   }
 }
