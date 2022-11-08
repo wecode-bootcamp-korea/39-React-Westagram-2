@@ -1,11 +1,14 @@
 import './SmMain.scss';
 import { ASIDE_LIST } from './AsideObjact';
+// 댓글 컴포넌트를 import
+import { FeedComment } from './Comment';
 // useState를 react로 부터 import
 import React, { useState } from 'react';
 
 function SmMain() {
   //댓글 input창의 값을 저장할 state를 컴포넌트 최상단에 선언
   const [commentValue, setCommentValue] = useState('');
+  // 댓글로 입력한 값을 배열에 저장해줄 빈배열
   const [commentList] = useState([]);
   // 이벤트를 인자로 받고 event.target.value를 setCommentValue에 저장해줄 함수
   const saveCommentValue = event => {
@@ -13,7 +16,7 @@ function SmMain() {
   };
 
   const activate = commentValue.length > 0; //댓글창의 값이 0보다 크다면 true를 작다면 false를 반환하는 조건식을 변수로 선언
-
+  // 댓글로 입력한 값을 commentList State의 빈배열에 추가해주고, 댓글 입력창에 입력한 값을 초기화 해주는 함수
   const post = () => {
     commentList.push(commentValue);
     setCommentValue('');
@@ -212,20 +215,10 @@ function SmMain() {
                   <div className="comments">
                     <a href="#!">댓글 1102개 모두 보기</a>
                   </div>
-                  {commentList.map((comment, index) => (
-                    <div className="commentMain" key={index}>
-                      <p className="usersName">
-                        yunsumin725
-                        <span className="usersComment">{comment}</span>
-                      </p>
-                      <img
-                        className="commentHeart"
-                        alt="작은 하트"
-                        src="/images/yunsumin/miniblack_heart.png"
-                      />
-                    </div>
-                  ))}
-
+                  <FeedComment
+                    /*댓글 컴포넌트가입력될 곳, 댓글 컴포넌트에서 사용할 입력한 값이 배열로저장되어 있는 commentList State를 porps로 자식요소에게 전달 */
+                    commentList={commentList}
+                  />
                   <div className="commentBar">
                     <img
                       alt="스마일 아이콘"
