@@ -20,7 +20,6 @@ function SmMain() {
   const post = () => {
     commentList.push(commentValue);
     setCommentValue('');
-    console.log(commentList);
   };
 
   return (
@@ -230,6 +229,7 @@ function SmMain() {
                         className="commentInput1"
                         placeholder="댓글입력..."
                         type="text"
+                        //댓글 input태그의 값을 commentValue State의 값과 동기화
                         value={commentValue}
                         //input창의 값이 변경될때마다 지정한 함수가 실행되는 이벤트 핸들러
                         onChange={saveCommentValue}
@@ -239,6 +239,7 @@ function SmMain() {
                         disabled={!activate}
                         className="commentButton1"
                         type="submit"
+                        // 버튼 태그를 클릭시 post함수가 실행되는 이벤트 리스너
                         onClick={post}
                       >
                         <h1 className={activate ? 'posting2' : 'posting1'}>
@@ -361,7 +362,9 @@ function SmMain() {
             </div>
             <ul className="asideBar">
               {ASIDE_LIST.map(asideList => (
-                <li key={asideList.id}>{asideList.text}</li>
+                <li key={asideList.id}>
+                  <a href={asideList.link}>{asideList.text}</a>
+                </li>
               ))}
             </ul>
             <div className="end2">© 2022 WESTAGRAM FROM META</div>
