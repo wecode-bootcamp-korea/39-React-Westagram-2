@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import CommentList from './Comments';
 import './Main.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
 
-export default function JmMain() {
+function JmMain() {
+  const [commentValue, setCommentValue] = useState('');
+
+  const [commentArray, setCommentArray] = useState([]);
+  const submitComment = () => {
+    setCommentArray([...commentArray, commentValue]);
+    //...스프레드연산자 공부
+    setCommentValue('');
+  };
+
+  // const submitComment = e => {
+  //   e.preventDefault();
+  //   commentArray.push(commentValue);
+  //   // setCommentValue('');
+  // };
+
+  const activeSubmit = commentValue.length > 0;
+
   return (
     <>
       <nav>
@@ -37,19 +55,6 @@ export default function JmMain() {
           </div>
         </div>
       </nav>
-
-      <div className="searchBox">
-        <ul className="searchList">
-          <p>shine</p>
-          <p>wecode</p>
-          <p>javascript</p>
-          <p>python</p>
-          <p>object</p>
-          <p>apple</p>
-          <p>react</p>
-          <p>django</p>
-        </ul>
-      </div>
 
       <div className="main">
         <div className="feeds">
@@ -111,18 +116,26 @@ export default function JmMain() {
                     alt=""
                   />
                 </li>
+                <CommentList commentArray={commentArray} />
               </ul>
               <p>42분 전</p>
             </div>
 
-            <div className="comment-box">
+            <form className="comment-box" onSumbit={submitComment}>
               <input
-                className="comment"
                 type="text"
                 placeholder="댓글 달기..."
+                value={commentValue}
+                onChange={event => setCommentValue(event.target.value)}
               />
-              <button className="loadBtn">게시</button>
-            </div>
+              <button
+                className={activeSubmit ? 'activeSub' : 'nonActiveSub'}
+                disabled={!activeSubmit}
+                onClick={submitComment}
+              >
+                게시
+              </button>
+            </form>
           </article>
         </div>
 
@@ -253,3 +266,5 @@ export default function JmMain() {
     </>
   );
 }
+
+export default JmMain;

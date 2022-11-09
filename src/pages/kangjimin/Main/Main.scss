@@ -85,64 +85,6 @@ i {
   font-size: 14px;
 }
 
-.searchBox {
-  position: absolute;
-  z-index: 2;
-  top: 60px;
-  left: 50%;
-  width: 241px;
-  max-height: 369px;
-  transform: translateX(-50%);
-  transition: all 0.1s;
-}
-
-.searchBox p {
-  display: none;
-}
-
-.searchList {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  border-radius: 3px;
-  background: #fff;
-  box-shadow: 0 0 5px rgb(0, 0, 0, 0.1);
-  list-style: none;
-}
-
-.searchList li {
-  width: 100%;
-  height: 60px;
-  padding: 0;
-  border-bottom: 1px solid rgb(219, 219, 219);
-}
-
-.searchList li:last-child {
-  border-bottom: none;
-}
-
-.searchList li:first-child::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  width: 0px;
-  height: 0px;
-  transform: translate3d(-50%, -90%, 0);
-  border-top: 10px solid none;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #fff;
-  border-left: 10px solid transparent;
-}
-
-.searchList a {
-  padding: 8px 14px;
-  color: rgb(38, 38, 38);
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
 .right-nav {
   display: flex;
   justify-content: flex-end;
@@ -316,11 +258,16 @@ article {
 }
 
 .comment-box button {
+  // 'nonActiveSub'
   padding: 0;
   border: none;
   background: none;
   color: rgba(0, 149, 246, 0.3);
   font-weight: 600;
+}
+
+.comment-box .activeSub {
+  color: blue;
 }
 
 /* main-right */
