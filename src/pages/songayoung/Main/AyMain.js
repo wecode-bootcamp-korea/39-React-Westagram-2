@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FOOTER_INFO } from './footer';
 
 export default function AyMain() {
   return (
@@ -230,17 +231,17 @@ export default function AyMain() {
               </li>
             </ul>
           </div>
-          <h5 className="footer">
-            instagram 정보 · 지원 · 홍보 센터 · API · <br />
-            채용 정보 · 개인정보처리방침 · 약관 ·<br />
-            디렉터리 · 프로필 · 해시태그 · 언어
-            <br />
-            <br />
-            © 2022 INSTAGRAM FROM META
-            <br />
-            <br />
-            <Link to="/AyLogin">·Logout·</Link>
-          </h5>
+          <footer className="footer">
+            <ul>
+              {FOOTER_INFO.map(info => (
+                <li className="footer-list" key={info.id}>
+                  <a href="/">{info.text}</a>
+                </li>
+              ))}
+            </ul>
+            <h3>2022 westagram from SAY</h3>
+            <Link to="/songayoung/login">·Logout·</Link>
+          </footer>
         </div>
       </section>
     </>

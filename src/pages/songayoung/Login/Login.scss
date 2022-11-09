@@ -64,9 +64,16 @@
           .btn {
             width: 100%;
             height: 100%;
-            background-color: #bfdffd;
-            border: 1px solid #bfdffd;
+            background-color: #0095f6;
+            border: 1px solid #0095f6;
+            color: #fff;
+            font-weight: 700;
             border-radius: 4px;
+            opacity: 100%;
+
+            &:disabled {
+              opacity: 30%;
+            }
 
             span {
               font-size: 18px;
