@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CommentList from './Comments';
+import AsideFooter from './Aside';
 import './Main.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
@@ -255,11 +256,12 @@ function JmMain() {
             </div>
           </div>
           <div className="copyright">
-            <p>
-              Instagram 정보 · 지원 · 홍보 센터 · API · 채용 정보 ·
-              개인정보처리방침 · 약관 · 디렉터리 · 프로필 · 해시태그 · 언어
+            <p className="asideText">
+              <ul>
+                <AsideFooter />
+              </ul>
             </p>
-            <p>© 2019 INSTAGRAM</p>
+            <p className="copyrightC">© 2019 INSTAGRAM</p>
           </div>
         </div>
       </div>

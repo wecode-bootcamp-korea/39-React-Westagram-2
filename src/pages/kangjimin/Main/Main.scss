@@ -375,8 +375,15 @@ article {
   font-size: 11px;
 }
 
-.copyright > p {
-  margin-bottom: 16px;
+.copyright a {
+  float: left;
+  color: rgb(199, 199, 199);
+  text-decoration: none;
+}
+
+.copyrightC {
+  display: inline-block;
+  margin-top: 16px;
 }
 
 @media (max-width: 1099px) {

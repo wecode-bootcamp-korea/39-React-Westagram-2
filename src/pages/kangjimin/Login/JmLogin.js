@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Login.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
@@ -58,7 +59,7 @@ function JmLogin() {
           로그인
         </button>
       </div>
-      <a href="">비밀번호를 잊으셨나요?</a>
+      <Link to="/">비밀번호를 잊으셨나요?</Link>
     </div>
   );
 }
