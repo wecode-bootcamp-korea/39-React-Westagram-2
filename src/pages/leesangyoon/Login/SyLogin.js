@@ -4,16 +4,18 @@ import './Login.scss';
 
 let isIdVaild = false;
 let isPwVaild = false;
+let isAllVaild = false;
 
 export default function Login() {
   const navigate = useNavigate();
-  const [isAllVaild, setIsAllVaild] = useState(false);
+  const [idValue, setIdValue] = useState('');
+  const [pwValue, setPwValue] = useState('');
 
   function handleBtnActivate() {
     if (isIdVaild && isPwVaild) {
-      setIsAllVaild(true);
+      isAllVaild = true;
     } else {
-      setIsAllVaild(false);
+      isAllVaild = false;
     }
   }
 
@@ -24,15 +26,21 @@ export default function Login() {
   }
 
   function handleBtnActivateById(event) {
-    const idValue = event.target.value;
+    setIdValue(idValue => {
+      idValue = event.target.value;
+      return idValue;
+    });
     isIdVaild = idValue.indexOf('@') !== -1 ? true : false;
-    handleBtnActivate(event);
+    handleBtnActivate();
   }
 
   function handleBtnActivateByPw(event) {
-    const PwValue = event.target.value;
-    isPwVaild = PwValue.length >= 5 ? true : false;
-    handleBtnActivate(event);
+    setPwValue(pwValue => {
+      pwValue = event.target.value;
+      return pwValue;
+    });
+    isPwVaild = pwValue.length >= 5 ? true : false;
+    handleBtnActivate();
   }
 
   return (

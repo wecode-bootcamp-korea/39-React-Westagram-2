@@ -1,7 +1,5 @@
 import React from 'react';
-import './Main.scss';
 import { useNavigate } from 'react-router-dom';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCompass,
@@ -9,6 +7,7 @@ import {
   faUser,
 } from '@fortawesome/free-regular-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import './Main.scss';
 
 // /* 댓글 기능 구현 */
 // const USERNAME = "sangyoonlee";
