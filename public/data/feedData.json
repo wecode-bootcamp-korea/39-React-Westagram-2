@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "profile": "/images/kangjimin/cat2.jpg",
+    "feedId": "mingming",
+    "feedImg": "/images/kangjimin/cat1.jpg",
+    "likeProfile": "/images/kangjimin/cat3.jpg",
+    "feedText": "고양이 사진보며 힐링..."
+  },
+  {
+    "id": 2,
+    "profile": "/images/kangjimin/data1.jpg",
+    "feedId": "mmmmmmmmmmm",
+    "feedImg": "/images/kangjimin/data1.jpg",
+    "likeProfile": "/images/kangjimin/data1.jpg",
+    "feedText": "너무 귀여워 너무 귀여워"
+  },
+  {
+    "id": 3,
+    "profile": "/images/kangjimin/data2.jpg",
+    "feedId": "jmjm",
+    "feedImg": "/images/kangjimin/data2.jpg",
+    "likeProfile": "/images/kangjimin/data2.jpg",
+    "feedText": "넘 귀엽군"
+  },
+  {
+    "id": 4,
+    "profile": "/images/kangjimin/data3.jpg",
+    "feedId": "jjjjjmmmmm",
+    "feedImg": "/images/kangjimin/data3.jpg",
+    "likeProfile": "/images/kangjimin/data3.jpg",
+    "feedText": "너도 귀여워"
+  }
+]
