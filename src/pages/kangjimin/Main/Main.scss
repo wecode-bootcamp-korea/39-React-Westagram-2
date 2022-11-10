@@ -379,6 +379,15 @@ article {
   float: left;
   color: rgb(199, 199, 199);
   text-decoration: none;
+
+  &::after {
+    content: ' • ';
+    float: right;
+  }
+
+  :last-child::after {
+    content: '';
+  }
 }
 
 .copyrightC {
