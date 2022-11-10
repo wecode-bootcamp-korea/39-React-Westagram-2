@@ -1,5 +1,4 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCompass,
@@ -7,80 +6,35 @@ import {
   faUser,
 } from '@fortawesome/free-regular-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+
 import './Main.scss';
-
-// /* 댓글 기능 구현 */
-// const USERNAME = "sangyoonlee";
-
-// const commentForm = document.querySelector(".comment__input form");
-// const commentInput = document.querySelector(".comment__input form input");
-// const commentList = document.querySelector(".comment-list");
-
-// let commentListArray = [];
-// let commentListHTML = [];
-// let id = 0;
-
-// let template = `
-//   <ul>
-//    {{__comment_list__}}
-//   </ul>
-// `;
-
-// /* 댓글 표시 기능 함수 */
-// function showCommentList(commentListArray) {
-//   commentListHTML = [];
-
-//   for (let i = 0; i < commentListArray.length; i++) {
-//     commentListHTML.push(`
-//       <li id=${commentListArray[i][0]}>
-//         <span>
-//           <span className="bold">${commentListArray[i][1]}</span>
-//           ${commentListArray[i][2]}
-//         </span>
-//         &nbsp;
-//         <i className="comment-icon fas fa-times" onclick="deleteComment(event)"></i>
-//         <i className="comment-icon far fa-heart"></i>
-//       </li>`);
-//   }
-
-//   return commentListHTML;
-// }
-
-// /* 요소 삭제 기능 함수 */
-// function deleteComment(event) {
-//   const deleteCommentID = event.target.parentElement.id;
-
-//   commentListArray = commentListArray.filter(
-//     (comment) => deleteCommentID != comment[0]
-//   );
-
-//   commentListHTML = showCommentList(commentListArray);
-//   commentList.innerHTML = template.replace(
-//     "{{__comment_list__}}",
-//     commentListHTML.join("")
-//   );
-// }
-
-// /* 댓글 추가 이벤트 리스너 */
-// commentForm.addEventListener("submit", (event) => {
-//   event.preventDefault();
-
-//   const commentMessage = commentInput.value;
-
-//   if (commentMessage.length === 0) {
-//     alert("빈 댓글은 등록하실 수 없습니다.");
-//     return;
-//   }
-
-//   commentListArray.push([id++, USERNAME, commentMessage]);
-//   commentListHTML = showCommentList(commentListArray);
-//   commentList.innerHTML = template.replace(
-//     "{{__comment_list__}}",
-//     commentListHTML.join("")
-//   );
-// });
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 export default function SyMain() {
+  const [comments, setComments] = useState({
+    newId: 0,
+    newComment: '',
+    commentList: [],
+  });
+
+  const { newId, newComment, commentList } = comments;
+
+  function addComment(event) {
+    event.preventDefault();
+    setComments({
+      newId: newId + 1,
+      newComment: '',
+      commentList: [...commentList, { id: newId, text: newComment }],
+    });
+  }
+
+  function inputComment(event) {
+    setComments({
+      ...comments,
+      newComment: event.target.value,
+    });
+  }
+
   return (
     <div className="container">
       <nav className="nav">
@@ -166,7 +120,17 @@ export default function SyMain() {
                   좋아요 <span>999</span>명
                 </span>
               </div>
-              <div className="comment-list" />
+              <div className="comment-list">
+                <ul>
+                  {commentList.map(comment => (
+                    <Comment
+                      key={comment.id}
+                      commentID={comment.id}
+                      commentValue={comment.value}
+                    />
+                  ))}
+                </ul>
+              </div>
             </div>
 
             <div className="main__article__comment-input">
@@ -178,8 +142,12 @@ export default function SyMain() {
                 />
               </div>
               <div className="comment-form">
-                <form>
-                  <input type="text" placeholder="댓글 달기..." />
+                <form onSubmit={event => addComment(event)}>
+                  <input
+                    onInput={event => inputComment(event)}
+                    type="text"
+                    placeholder="댓글 달기..."
+                  />
                   <button>게시</button>
                 </form>
               </div>
@@ -215,5 +183,27 @@ export default function SyMain() {
         </div>
       </main>
     </div>
+  );
+}
+
+function Comment({ commentID, commentValue }) {
+  return (
+    <li id={commentID}>
+      <span>
+        <span className="bold">{commentID}</span>
+        {commentValue}
+      </span>
+      &nbsp;
+      <FontAwesomeIcon
+        className="comment-icon fas fa-times"
+        icon={faTimes}
+        size="lg"
+      />
+      <FontAwesomeIcon
+        className="comment-icon fas fa-times"
+        icon={faHeart}
+        size="lg"
+      />
+    </li>
   );
 }
