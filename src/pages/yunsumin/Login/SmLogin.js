@@ -21,11 +21,31 @@ function SmLogin() {
   // userId의 값에 @가 있는가 userPw값의 글자수가 5자리 이상인가를 논리연산자를 사용하여 두조건이 충족한다면 true / 둘중 하나라도 틀리다면 false 를 반환하는 조건식을 변수에 할당함
   const validate = userId.indexOf('@') !== -1 && userPw.length >= 5;
   // validate라는 변수에 할당한 조건식이 맞다면 버튼을눌러 다음페이지 틀렸다면 id와 비밀번호를 확인해달라고 알림창을 출력하는 함수
-  const loginCondition = () => {
-    validate
-      ? navigate('/yunsumin/main') //조건이 맞다면 지정한 경로로 이동
-      : alert('아이디 또는 비밀번호를 확인해 주세요.');
+  const loginCondition = e => {
+    fetch('http://10.58.52.203:3000/users/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'appLication/json;charest=utf-8' },
+      body: JSON.stringify({ email: userId, password: userPw }),
+    })
+      .then(response => response.json())
+      .then(data => localStorage.setItem('token1', data.accessToken));
+
+    // const onClickLogin = e => {
+    //   fetch('http://10.58.52.203:3000/users/signup', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json;charset=utf-8',
+    //     },
+    //     body: JSON.stringify({ name: inputId, password: inputPw }),
+    //   })
+    //     .then(response => response.json())
+    //     .then(data => console.log(data));
+    // };
+    // validate
+    //   ? navigate('/yunsumin/main') //조건이 맞다면 지정한 경로로 이동
+    //   : alert('아이디 또는 비밀번호를 확인해 주세요.');
   };
+
   return (
     <div className="loginPage">
       <div className="mainLogin">

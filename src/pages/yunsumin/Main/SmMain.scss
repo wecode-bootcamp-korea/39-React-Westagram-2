@@ -1,20 +1,10 @@
-* {
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
-  border-style: none;
-  outline: none;
-  list-style: none;
-  text-decoration: none;
-}
+@import './Components/mixin';
 
 .mainPage {
   .navcant {
-    display: flex;
+    @include flex(center, space-evenly);
     position: fixed;
     flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-evenly;
 
     width: 100%;
     height: 60px;
@@ -26,7 +16,6 @@
 
   .logo {
     width: 268px;
-    height: 36px;
     text-align: center;
   }
 
@@ -67,20 +56,15 @@
   }
 
   .icons {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    @include flex(center, space-evenly);
 
     width: 265px;
     height: 36px;
   }
 
   .icons li {
-    display: flex;
+    @include flex(center, space-evenly);
     flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-evenly;
-
     height: 26px;
   }
 
@@ -142,9 +126,7 @@
   }
 
   .story .storyItem {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    @include flex(flex-start, center);
 
     width: 58px;
     height: 58px;
@@ -159,9 +141,7 @@
   }
 
   .gradation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center);
 
     width: 62px;
     height: 62px;
@@ -178,10 +158,9 @@
   }
 
   .plofile {
-    display: flex;
+    @include flex(flex-end, space-around);
+
     flex-flow: row wrap;
-    align-items: flex-end;
-    justify-content: space-around;
 
     width: 470px;
     height: 60px;
@@ -196,10 +175,8 @@
   }
 
   .userName {
-    display: flex;
+    @include flex(flex-start, space-around);
     flex-flow: row nowrap;
-    align-items: flex-start;
-    justify-content: space-around;
 
     width: 470px;
     height: 10px;
@@ -217,21 +194,21 @@
   .feeds {
     width: 470px;
     height: 700px;
-    margin-top: 20px;
+
     background-color: white;
   }
 
   .firstFeeds {
     width: 470px;
+    margin-top: 20px;
     border: 1px solid #dbdbdb;
     border-radius: 8px;
   }
 
   .feedsHearder {
-    display: flex;
+    @include flex(center, space-evenly);
+
     flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-evenly;
 
     width: 470px;
     height: 58px;
@@ -257,9 +234,7 @@
   }
 
   .feedName {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    @include flex(center, flex-start);
 
     width: 368px;
     height: 40px;
@@ -276,9 +251,7 @@
   }
 
   .feedsGradation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center);
 
     width: 44px;
     height: 44px;
@@ -316,10 +289,9 @@
   }
 
   .lickBar {
-    display: flex;
+    @include flex(center, space-between);
+
     flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-between;
 
     width: 100%;
     height: 46px;
@@ -423,7 +395,12 @@
     padding: 0px 16px 0px 16px;
   }
 
-  .title span {
+  .titleUserName {
+    font-size: 14px;
+    font-weight: 550;
+  }
+
+  .titleUserComment {
     margin-left: 5px;
   }
 
@@ -508,9 +485,8 @@
   }
 
   .plusFarow {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    @include flex(center, space-around);
+
     width: 319px;
     height: 80px;
     margin-top: 90px;
@@ -543,15 +519,12 @@
   }
 
   .suggestion {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(center, space-between);
   }
 
   .mor {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(center, space-between);
+
     width: 100%;
     height: 48px;
     margin-top: 5px;
@@ -636,9 +609,7 @@
   }
 
   .newcomment {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(center, space-between);
     padding: 0px 16px 0px 16px;
   }
 
@@ -655,9 +626,8 @@
   }
 
   .commentHartNo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center);
+
     width: 16px;
     height: 16px;
     background: none;
@@ -665,9 +635,8 @@
   }
 
   .commentHartOk {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center);
+
     width: 16px;
     height: 16px;
     background: none;
@@ -686,16 +655,62 @@
 
   .commentMain {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
+
     padding-right: 16px;
     padding-left: 16px;
+  }
+
+  .commentMain:hover {
+    .xButton {
+      transform: translateX(-4px);
+      transition: all 0.7s;
+      opacity: 100%;
+      cursor: pointer;
+    }
+
+    .xButton:hover {
+      scale: 1.3;
+      transition: 0.5s;
+    }
+
+    .commentHeart {
+      transform: translateX(-4px);
+      transition: all 0.5s;
+      opacity: 100%;
+      cursor: pointer;
+    }
+
+    .commentHeart:hover {
+      scale: 1.3;
+      transition: 0.5s;
+    }
+
+    .commentHeartBlack {
+      transform: translateX(-4px);
+      transition: all 0.5s;
+      opacity: 100%;
+      cursor: pointer;
+    }
+
+    .commentHeartBlack:hover {
+      scale: 1.3;
+      transition: 0.5s;
+    }
+  }
+
+  .commentIcons {
+    display: flex;
+    align-items: center;
   }
 
   .usersName {
     margin-bottom: 5px;
     font-size: 15px;
     font-weight: 550;
+    cursor: pointer;
   }
 
   .usersComment {
@@ -704,7 +719,33 @@
   }
 
   .commentHeart {
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
+    transform: translateX(10px);
+    transition: 0.5s;
+    opacity: 0%;
+  }
+
+  .commentHeartBlack {
+    width: 17px;
+    height: 17px;
+    transform: translateX(10px);
+    transition: 0.5s;
+  }
+
+  .xButton {
+    margin-left: 5px;
+    transform: translateX(10px);
+    transition: 0.7s;
+    opacity: 0%;
+    background: none;
+  }
+
+  .fa-trash-alt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
   }
 }

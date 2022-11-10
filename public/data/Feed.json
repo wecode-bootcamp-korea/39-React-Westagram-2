@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "userName": "yunsumin",
+    "userImg": "/images/yunsumin/my.jpg",
+    "userPohto": "/images/yunsumin/대부도.jpg",
+    "userLick": 1145,
+    "userComment": "대부도 감성카페",
+    "moreComments": "1104"
+  },
+
+  {
+    "id": 2,
+    "userName": "5_ginoou",
+    "userImg": "/images/yunsumin/진우 사진.jpg",
+    "userPohto": "/images/yunsumin/강화도.jpg",
+    "userLick": 904,
+    "userComment": "강화도 루지 개꿀잼",
+    "moreComments": "1104"
+  },
+
+  {
+    "id": 3,
+    "userName": "gisung_0809",
+    "userImg": "/images/yunsumin/기성이 사진.jpg",
+    "userPohto": "/images/yunsumin/불알친구.jpg",
+    "userLick": 911,
+    "userComment": "나는 바보다",
+    "moreComments": "1104"
+  },
+
+  {
+    "id": 4,
+    "userName": "sunghung",
+    "userImg": "/images/yunsumin/my.jpg",
+    "userPohto": "/images/yunsumin/dog_pohto_1.jpg",
+    "userLick": 337,
+    "userComment": "친구집 강아지 남친짤",
+    "moreComments": "1104"
+  },
+
+  {
+    "id": 5,
+    "userName": "p._.jong_w",
+    "userImg": "/images/yunsumin/종욱이 사진.jpg",
+    "userPohto": "/images/yunsumin/해병.jpg",
+    "userLick": 125,
+    "userComment": "해병대 남친짤",
+    "moreComments": "1104"
+  }
+]
