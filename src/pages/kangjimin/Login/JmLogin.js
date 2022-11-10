@@ -6,18 +6,42 @@ import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
 
 function JmLogin() {
+  const fetchFunction = () => {
+    fetch('http://10.58.52.230:3008/auth/signin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      body: JSON.stringify({ email: idValue, password: pwValue }),
+    }) //요청
+      .then(response => {
+        console.log(response);
+        if (response.status != 200) {
+          throw new Error('error');
+        }
+        return response.json();
+      })
+      .catch(err => {
+        console.log(err);
+        alert('로그인 실패');
+      })
+      .then(data => {
+        console.log(data);
+        localStorage.setItem('token', data.accessToken);
+        navigate('/kangjimin/main');
+      });
+  };
+
   const navigate = useNavigate();
 
   const [idValue, setIdValue] = useState('');
   const [pwValue, setPwValue] = useState('');
   const [btnActive, setBtnActive] = useState(false);
 
-  const goMain = () => {
-    if (idValue.includes('@') && pwValue.length >= 5) {
-      navigate('/kangjimin/main');
-    } else {
-    }
-  };
+  // const goMain = () => {
+  //   if (idValue.includes('@') && pwValue.length >= 5) {
+  //     //navigate('/kangjimin/main');
+  //   } else {
+  //   }
+  // };
 
   const btnIsActive = () => {
     return idValue.includes('@') && pwValue.length >= 5
@@ -54,7 +78,7 @@ function JmLogin() {
         <button
           className={btnActive ? 'activeButton' : 'button'}
           disabled={idValue === '' || pwValue < 5 ? true : false}
-          onClick={goMain}
+          onClick={fetchFunction}
         >
           로그인
         </button>
