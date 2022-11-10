@@ -287,27 +287,8 @@ body {
             .comment-user {
               margin-right: 3px;
             }
-            .delete {
-              position: absolute;
-              right: 30px;
-              font-size: 12px;
-              cursor: pointer;
-
-              &:hover {
-                opacity: 0.5;
-              }
-            }
-            .heart {
-              position: absolute;
-              right: 15px;
-              font-size: 12px;
-              cursor: pointer;
-
-              &:hover {
-                opacity: 0.5;
-              }
-            }
           }
+
           .feed-time {
             color: #9e9e9e;
             margin-top: 5px;
@@ -316,6 +297,9 @@ body {
         }
 
         .comments {
+          margin-bottom: 4px;
+          font-size: 14px;
+
           .comment {
             position: relative;
             margin-top: 5px;

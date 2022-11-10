@@ -3,8 +3,21 @@ import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 export default function AyLogin() {
-  const [id, setId] = useState('');
-  const [pw, setPw] = useState('');
+  const check = () => {
+    fetch('http://10.58.52.237:3000/auth/signin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data));
+  };
+
+  const [email, setId] = useState('');
+  const [password, setPw] = useState('');
   const navigate = useNavigate();
 
   const saveUserId = event => {
@@ -14,7 +27,7 @@ export default function AyLogin() {
     setPw(event.target.value);
   };
 
-  const isValid = id.indexOf('@') !== -1 && pw.length >= 8;
+  const isValid = email.indexOf('@') !== -1 && password.length >= 8;
 
   const loginSucess = () => {
     isValid
@@ -50,16 +63,17 @@ export default function AyLogin() {
               </div>
               <div className="buttonBox">
                 <button
+                  type="button"
                   disabled={disable}
                   className="btn"
-                  onClick={loginSucess}
+                  onClick={check}
                 >
                   로그인
                 </button>
               </div>
             </form>
             <div className="passwordForget">
-              <a href>
+              <a>
                 <span>비밀번호를 잊으셨나요?</span>
               </a>
             </div>

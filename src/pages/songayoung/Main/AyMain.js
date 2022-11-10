@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FOOTER_INFO } from './footer';
 
 export default function AyMain() {
+  const [commentInput, setCommentInput] = useState('');
+  const [commentList, setCommentList] = useState([]);
+  const active = commentInput.length > 5;
+
+  const saveCommentInput = event => {
+    setCommentInput(event.target.value);
+  };
+
+  const handleClickBtn = () => {
+    const pushedComments = [...commentList, commentInput];
+    setCommentList(pushedComments);
+    setCommentInput('');
+  };
+
   return (
     <>
       <header>
@@ -100,15 +115,31 @@ export default function AyMain() {
                 <h4 className="feed-text">베이커리~</h4>
               </div>
               <h5 className="feed-time">41분전</h5>
+              {commentList.map((comment, index) => {
+                return (
+                  <div key={index} className="comments">
+                    <span className="comment-user">ayoung</span>
+                    {comment}
+                  </div>
+                );
+              })}
             </div>
 
             <div className="commentInput">
               <input
                 className="comment-input"
                 type="text"
-                placeholder="댓글 달기..."
+                placeholder="댓글달기..."
+                value={commentInput}
+                onChange={saveCommentInput}
               />
-              <button className="comment-btn">게시</button>
+              <button
+                className="comment-btn"
+                disabled={!active}
+                onClick={handleClickBtn}
+              >
+                게시
+              </button>
             </div>
           </div>
         </div>
