@@ -1,16 +1,13 @@
 import './SmMain.scss';
 import { ASIDE_LIST } from './Components/AsideObjact';
-// 댓글 컴포넌트를 import
 
 import Feed from './Components/Feed';
 
-// useState를 react로 부터 import
 import React, { useState } from 'react';
 
 import { useEffect } from 'react';
 
 function SmMain() {
-  // 이벤트를 인자로 받고 event.target.value를 setCommentValue에 저장해줄 함수
   const [feedList, setFeedList] = useState([]);
 
   useEffect(() => {

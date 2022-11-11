@@ -1,13 +1,4 @@
-* {
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
-  border-style: none;
-  outline: none;
-  text-decoration: none;
-}
-
-.loginPage {
+.loginBox {
   .mainLogin {
     display: flex;
     position: relative;
@@ -47,7 +38,7 @@
     font-size: 40px;
   }
 
-  .loginbar {
+  .loginBar {
     position: absolute;
     top: 145px;
     right: 1px;
@@ -194,5 +185,10 @@
   .doun a {
     width: 135px;
     height: 41px;
+  }
+
+  .faceboockIcon {
+    width: 15px;
+    height: 15px;
   }
 }

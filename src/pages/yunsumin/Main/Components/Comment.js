@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const FeedComment = props => {
-  const { value } = props;
+  const { value, deleteComment } = props;
   const [heart, setHeart] = useState(false);
 
   const heartChange = () => {
@@ -30,7 +30,7 @@ const FeedComment = props => {
           onClick={heartChange}
         />
         <button className="xButton">
-          <i className="far fa-trash-alt fa-lg" />
+          <i className="far fa-trash-alt fa-lg" onClick={deleteComment} />
         </button>
       </div>
     </div>

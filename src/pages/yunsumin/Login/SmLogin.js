@@ -1,81 +1,68 @@
-//React 내부에 내장되어 있는 useState함수를 import함
 import React, { useState } from 'react';
 
-//useNavigate hook을 React-router-dom에서부터 import
 import { useNavigate } from 'react-router-dom';
 import './SmLogin.scss';
 function SmLogin() {
-  // import한 useState hook은 사용 규칙에 따라 컴포넌트 선언문 최상위 블록내에서 사용해야함 (return문 위쪽)
-  const [userId, setUserId] = useState(''); // userId = 동적으로 관리해줄 상태값 / setUserId = 상태값을 업데이트 하는 함수 / useState() = 상태값의 초기값을 인자로 넘겨줄수 있음
-  const [userPw, setUserPw] = useState(''); // 첫 번째 요소와 두 번째 요소의 이름은 자유롭게 사용가능 / 2번째 값은 이름앞에 set을 넣어줘야함
-  // navigate라는 변수에 useNavigate hook을 할당해 줌으로써 navigate(./../이동할경로)로 지정할수있다.
-  const navigate = useNavigate();
-  // id입력 창의 value를 userId state에 저장해주는 함수
-  const saveUserId = event => {
-    setUserId(event.target.value);
-  };
-  // passwerd입력 창의 value를 userPw state에 저장해주는 함수
-  const saveUserPw = event => {
-    setUserPw(event.target.value);
-  };
-  // userId의 값에 @가 있는가 userPw값의 글자수가 5자리 이상인가를 논리연산자를 사용하여 두조건이 충족한다면 true / 둘중 하나라도 틀리다면 false 를 반환하는 조건식을 변수에 할당함
-  const validate = userId.indexOf('@') !== -1 && userPw.length >= 5;
-  // validate라는 변수에 할당한 조건식이 맞다면 버튼을눌러 다음페이지 틀렸다면 id와 비밀번호를 확인해달라고 알림창을 출력하는 함수
-  const loginCondition = e => {
-    fetch('http://10.58.52.203:3000/users/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'appLication/json;charest=utf-8' },
-      body: JSON.stringify({ email: userId, password: userPw }),
-    })
-      .then(response => response.json())
-      .then(data => localStorage.setItem('token1', data.accessToken));
+  // const [userId, setUserId] = useState('');
+  // const [userPw, setUserPw] = useState('');
 
-    // const onClickLogin = e => {
-    //   fetch('http://10.58.52.203:3000/users/signup', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json;charset=utf-8',
-    //     },
-    //     body: JSON.stringify({ name: inputId, password: inputPw }),
-    //   })
-    //     .then(response => response.json())
-    //     .then(data => console.log(data));
-    // };
-    // validate
-    //   ? navigate('/yunsumin/main') //조건이 맞다면 지정한 경로로 이동
-    //   : alert('아이디 또는 비밀번호를 확인해 주세요.');
+  const [userInfo, setUserInfo] = useState({
+    id: '',
+
+    pw: '',
+  });
+
+  const handleUserInfo = e => {
+    const { name, value } = e.target;
+    setUserInfo(info => ({ ...info, [name]: value }));
+    console.log(userInfo);
+  };
+
+  const navigate = useNavigate();
+
+  const validate = userInfo.id.indexOf('@') !== -1 && userInfo.pw.length >= 5;
+  // const loginCondition = e => {
+  //   fetch('http://10.58.52.203:3000/users/login', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'appLication/json;charest=utf-8' },
+  //     body: JSON.stringify({ email: userId, password: userPw }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => navigate('/yunsumin/main'));
+  // };
+  const loginCondition = e => {
+    validate
+      ? navigate('/yunsumin/main')
+      : alert('아이디 또는 비밀번호를 확인해 주세요.');
   };
 
   return (
-    <div className="loginPage">
+    <div className="loginBox">
       <div className="mainLogin">
         <div className="logo">
           <h1>Westagram</h1>
         </div>
 
-        <div className="loginbar">
+        <div className="loginBar">
           <form onSubmit={e => e.preventDefault()}>
             <input
+              name="id"
               className="idInput"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              // onChange : input창의 값이 변경될때마다 지정한 함수가 실행되는 이벤트
-              onChange={saveUserId}
+              onChange={handleUserInfo}
             />
             <input
+              name="pw"
               className="pwInput"
               type="password"
               placeholder="비밀번호"
-              // onChange : input창의 값이 변경될때마다 지정한 함수가 실행되는 이벤트
-              onChange={saveUserPw}
+              onChange={handleUserInfo}
             />
             <button
-              // validate조건의 값이 참이면 loginActive 거짓이면 loginBt class를 할당하는 코드
               className={validate ? 'loginActive' : 'loginBt'}
               type="submit"
-              // 부등연산자를 사용하여 validate의 반환값이 true 라면 false를 반환 / false라면 true를 반환한다 (disabled 는 true가 버튼 비활성화 / false가 버튼 활성화 이다.)
               disabled={!validate}
-              // onClick를 할당한 요소를 클릭할때마다 지정한 함수가 실행되는 이벤트
               onClick={loginCondition}
             >
               로그인
@@ -92,9 +79,8 @@ function SmLogin() {
             <a href="https://www.facebook.com/">
               <span>
                 <img
+                  className="faceboockIcon"
                   src="/images/yunsumin/free-icon-facebook-174848.png"
-                  width="15px"
-                  height="15px"
                   alt="페북 아이콘"
                 />
               </span>

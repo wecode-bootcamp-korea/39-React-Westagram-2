@@ -4,10 +4,8 @@ import FeedComment from './Comment';
 const Feed = props => {
   const { feed } = props;
 
-  //댓글 input창의 값을 저장할 state를 컴포넌트 최상단에 선언
   const [commentValue, setCommentValue] = useState('');
-  // 댓글로 입력한 값을 배열에 저장해줄 빈배열
-  const [commentList] = useState([]);
+  const [commentList, setCommentList] = useState([]);
 
   const [feedLick, setFeedLick] = useState(false);
 
@@ -15,10 +13,9 @@ const Feed = props => {
     setCommentValue(event.target.value);
   };
 
-  const activate = commentValue.length > 0; //댓글창의 값이 0보다 크다면 true를 작다면 false를 반환하는 조건식을 변수로 선언
-  // 댓글로 입력한 값을 commentList State의 빈배열에 추가해주고, 댓글 입력창에 입력한 값을 초기화 해주는 함수
+  const activate = commentValue.length > 0;
   const post = () => {
-    commentList.push(commentValue);
+    setCommentList([...commentList, commentValue]);
     setCommentValue('');
   };
 
@@ -27,8 +24,15 @@ const Feed = props => {
       setFeedLick(true);
     } else {
       setFeedLick(false);
-      console.log(feedLick);
     }
+  };
+
+  // () => {}
+  const deleteComment = target => {
+    return function () {
+      const deleteData = commentList.filter((el, index) => index !== target);
+      setCommentList(deleteData);
+    };
   };
 
   return (
@@ -92,7 +96,11 @@ const Feed = props => {
           <a href="#!">댓글 1102개 모두 보기</a>
         </div>
         {commentList.map((comment, index) => (
-          <FeedComment key={index} value={comment} />
+          <FeedComment
+            key={index}
+            value={comment}
+            deleteComment={deleteComment(index)}
+          />
         ))}
 
         <div className="commentBar">
@@ -106,17 +114,13 @@ const Feed = props => {
               className="commentInput1"
               placeholder="댓글입력..."
               type="text"
-              //댓글 input태그의 값을 commentValue State의 값과 동기화
               value={commentValue}
-              //input창의 값이 변경될때마다 지정한 함수가 실행되는 이벤트 핸들러
               onChange={saveCommentValue}
             />
             <button
-              // 위에서 선언한 조건식변수의 값이 ture라면 disabled의 값을 false로 그게 아니라면 true로 변경해줌
               disabled={!activate}
               className="commentButton1"
               type="submit"
-              // 버튼 태그를 클릭시 post함수가 실행되는 이벤트 리스너
               onClick={post}
             >
               <h1 className={activate ? 'posting2' : 'posting1'}>게시</h1>
@@ -129,3 +133,12 @@ const Feed = props => {
 };
 
 export default Feed;
+
+// function sayHi(talker) {
+//   return function () {
+//     console.log(talker + ' hi');
+//   };
+// }
+
+// const sayHiSumin = sayHi('sumin');
+// sayHiSumin();
