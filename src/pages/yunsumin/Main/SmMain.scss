@@ -1,0 +1,777 @@
+@import './Components/mixin';
+
+.mainPage {
+  .navcant {
+    @include flex(center, space-evenly);
+    position: fixed;
+    flex-flow: row nowrap;
+
+    width: 100%;
+    height: 60px;
+    padding: 0px 20px;
+    border-bottom: solid 1px #dbdbdb;
+
+    background-color: white;
+  }
+
+  .logo {
+    width: 268px;
+    text-align: center;
+  }
+
+  .logo h1 {
+    color: #292929;
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+  }
+
+  .inputBar {
+    position: relative;
+  }
+
+  .inputBar,
+  .inputA {
+    width: 268px;
+    height: 36px;
+    border-radius: 5px;
+  }
+
+  .inputBar .inputA {
+    padding: 0px 16px;
+    background-color: #efefef;
+    font-size: 16px;
+  }
+
+  .inputBar .clickEv {
+    padding-left: 38px;
+  }
+
+  .inputBar .origsvg {
+    position: absolute;
+    top: 10px;
+    left: 13px;
+
+    width: 16px;
+    opacity: 50%;
+  }
+
+  .icons {
+    @include flex(center, space-evenly);
+
+    width: 265px;
+    height: 36px;
+  }
+
+  .icons li {
+    @include flex(center, space-evenly);
+    flex-flow: row nowrap;
+    height: 26px;
+  }
+
+  .icons svg {
+    width: 26px;
+    margin-left: 15px;
+    opacity: 85%;
+  }
+
+  .icons img {
+    width: 36px;
+    margin-left: 15px;
+  }
+
+  .icons .messgeIcon {
+    width: 26px;
+    margin-left: 15px;
+  }
+
+  .plopBody {
+    width: 41px;
+    height: 30px;
+  }
+
+  .plop img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+  }
+
+  .plop {
+    width: 41px;
+    height: 30px;
+  }
+
+  .section {
+    display: flex;
+    flex-flow: row nowrap;
+
+    width: 820px;
+    height: 900px;
+    margin: auto;
+  }
+
+  .firstSection {
+    width: 470px;
+    height: 100%;
+    margin: 10px 32px 0px 0px;
+  }
+
+  .story {
+    width: 470px;
+    height: 110px;
+    margin-top: 70px;
+    padding: 16px 0px 16px 0px;
+    border: solid 1px #dbdbdb;
+    border-radius: 8px;
+    background-color: white;
+  }
+
+  .story .storyItem {
+    @include flex(flex-start, center);
+
+    width: 58px;
+    height: 58px;
+    overflow: hidden;
+    border: solid 2px white;
+    border-radius: 50%;
+  }
+
+  .storyItem .storyImg {
+    width: 80px;
+    cursor: pointer;
+  }
+
+  .gradation {
+    @include flex(center, center);
+
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle farthest-corner at 32% 106%,
+        #ffe17d 0%,
+        #ffcd69 10%,
+        #fa9137 38%,
+        #eb4141 42%,
+        transparent 82%
+      ),
+      linear-gradient(135deg, #234bd7 12%, #c33cbe 23%);
+  }
+
+  .plofile {
+    @include flex(flex-end, space-around);
+
+    flex-flow: row wrap;
+
+    width: 470px;
+    height: 60px;
+  }
+
+  .obj {
+    object-fit: cover;
+  }
+
+  .plofile3 .storyImg {
+    width: 60px;
+  }
+
+  .userName {
+    @include flex(flex-start, space-around);
+    flex-flow: row nowrap;
+
+    width: 470px;
+    height: 10px;
+  }
+
+  .userName p {
+    width: 57px;
+    height: 25px;
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 550;
+    text-align: center;
+  }
+
+  .feeds {
+    width: 470px;
+    height: 700px;
+
+    background-color: white;
+  }
+
+  .firstFeeds {
+    width: 470px;
+    margin-top: 20px;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+  }
+
+  .feedsHearder {
+    @include flex(center, space-evenly);
+
+    flex-flow: row nowrap;
+
+    width: 470px;
+    height: 58px;
+    border-bottom: solid 1px #dbdbdb;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .feedsHearder .feed1Img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .feedsHearder .feed2Img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .feedName {
+    @include flex(center, flex-start);
+
+    width: 368px;
+    height: 40px;
+    font-weight: 550;
+  }
+
+  .feedName {
+    font-size: 14px;
+  }
+
+  .feedsHearder svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .feedsGradation {
+    @include flex(center, center);
+
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle farthest-corner at 32% 106%,
+        #ffe17d 0%,
+        #ffcd69 10%,
+        #fa9137 28%,
+        #eb4141 42%,
+        transparent 82%
+      ),
+      linear-gradient(135deg, #234bd7 12%, #c33cbe 58%);
+  }
+
+  .feeds1Photo {
+    display: flex;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 400px;
+  }
+
+  .feeds1Photo {
+    width: 470px;
+  }
+
+  .photo1 {
+    width: 469.66px;
+    object-fit: cover;
+  }
+
+  .commentBox {
+    width: 470px;
+  }
+
+  .lickBar {
+    @include flex(center, space-between);
+
+    flex-flow: row nowrap;
+
+    width: 100%;
+    height: 46px;
+    padding: 0px 12px 0px 12px;
+  }
+
+  .lickBar svg {
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+  }
+
+  .lickBar img {
+    width: 35px;
+    height: 35px;
+    padding: 2px;
+  }
+
+  .hartButton {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+  }
+
+  .hartButton1 {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+  }
+
+  .hart:hover {
+    scale: 1.2;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .hart1:hover {
+    scale: 1.2;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .redHart {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    background-image: url('../../../assets/yunsumin/red_hart.png');
+    background-size: 40px;
+    scale: 0.8;
+  }
+
+  .redHart1 {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    background-image: url('../../../assets/yunsumin/red_hart.png');
+    background-size: 40px;
+    scale: 0.8;
+  }
+
+  .redHart:hover {
+    scale: 1;
+    transition: 0.5s;
+  }
+
+  .redHart1:hover {
+    scale: 1;
+    transition: 0.5s;
+  }
+
+  .lickView {
+    display: flex;
+    align-items: center;
+    width: 470px;
+    height: 25px;
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .lickView b {
+    font-weight: 550;
+  }
+
+  .viewImgDiv {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .viewImgDiv img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+  }
+
+  .title {
+    width: 470px;
+    height: 25px;
+    padding: 0px 16px 0px 16px;
+  }
+
+  .titleUserName {
+    font-size: 14px;
+    font-weight: 550;
+  }
+
+  .titleUserComment {
+    margin-left: 5px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .comments {
+    width: 470px;
+    height: 25px;
+    padding: 0px 16px 0px 16px;
+  }
+
+  .comments a {
+    color: gray;
+    font-size: 14px;
+  }
+
+  .commentBar {
+    display: flex;
+    align-items: center;
+    width: 470px;
+    height: 50px;
+    margin-top: 15px;
+    padding: 4px 16px 4px 12px;
+    border-top: solid 1px #dbdbdb;
+  }
+
+  .commentBar img {
+    width: 29px;
+    height: 29px;
+  }
+
+  .commentInput1 {
+    width: 375px;
+    height: 40px;
+    padding: 12px;
+  }
+
+  .commentInput2 {
+    width: 375px;
+    height: 40px;
+    padding: 12px;
+  }
+
+  .commentRun {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 5px;
+  }
+
+  .commentButton1 {
+    width: 35px;
+    height: 40px;
+    background-color: white;
+  }
+
+  .commentButton2 {
+    width: 35px;
+    height: 40px;
+    background-color: white;
+  }
+
+  .posting1 {
+    color: #b3dffc;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .posting2 {
+    color: #0095f6;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .postingOk {
+    opacity: 100%;
+    color: #0095f6;
+    font-size: 15px;
+  }
+
+  .secondSection {
+    width: 320px;
+    height: 550px;
+  }
+
+  .plusFarow {
+    @include flex(center, space-around);
+
+    width: 319px;
+    height: 80px;
+    margin-top: 90px;
+    padding: 7px 0px 7px 0px;
+  }
+
+  .farowPohtoBody {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .farowPohto {
+    width: 59px;
+    height: 59px;
+    object-fit: cover;
+  }
+
+  .farowText {
+    margin-right: 90px;
+  }
+
+  .farowText b {
+    font-weight: 550;
+  }
+
+  .farowText p {
+    margin-top: 5px;
+  }
+
+  .suggestion {
+    @include flex(center, space-between);
+  }
+
+  .mor {
+    @include flex(center, space-between);
+
+    width: 100%;
+    height: 48px;
+    margin-top: 5px;
+    padding: 0px 0px 0px 7px;
+  }
+
+  .mor .aa {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .dheText {
+    width: 220px;
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 3px;
+  }
+
+  .dheText b {
+    font-weight: 550;
+  }
+
+  .dheText p {
+    margin-top: 5px;
+  }
+
+  .catImg {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+
+  .secondSection b,
+  p {
+    font-size: 12px;
+  }
+
+  .follow {
+    color: #0095f6;
+    cursor: pointer;
+  }
+
+  .farowButton {
+    color: #0095f6;
+    cursor: pointer;
+  }
+
+  .asideBar {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .asideBar li {
+    margin-right: 5px;
+    margin-bottom: 2px;
+  }
+
+  .asideBar a {
+    color: #dbdbdb;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .end2 {
+    margin-top: 20px;
+  }
+
+  .end2 {
+    color: #dbdbdb;
+  }
+
+  .commentUl {
+    width: 100%;
+  }
+
+  .commentUl1 {
+    width: 100%;
+  }
+
+  .newcomment {
+    @include flex(center, space-between);
+    padding: 0px 16px 0px 16px;
+  }
+
+  .newcomment b,
+  span {
+    font-size: 14px;
+  }
+
+  form {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 100%;
+  }
+
+  .commentHartNo {
+    @include flex(center, center);
+
+    width: 16px;
+    height: 16px;
+    background: none;
+    background-image: url('../../../assets/yunsumin/miniblack_heart.png');
+  }
+
+  .commentHartOk {
+    @include flex(center, center);
+
+    width: 16px;
+    height: 16px;
+    background: none;
+    background-image: url('../../../assets/yunsumin/mini_heart.png');
+  }
+
+  .commentHartNo:hover {
+    scale: 1.5;
+    transition: 0.5s;
+  }
+
+  .hartBack {
+    width: 14px;
+    background-image: url('../../../assets/yunsumin/miniblack_heart.png');
+  }
+
+  .commentMain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .commentMain:hover {
+    .xButton {
+      transform: translateX(-4px);
+      transition: all 0.7s;
+      opacity: 100%;
+      cursor: pointer;
+    }
+
+    .xButton:hover {
+      scale: 1.3;
+      transition: 0.5s;
+    }
+
+    .commentHeart {
+      transform: translateX(-4px);
+      transition: all 0.5s;
+      opacity: 100%;
+      cursor: pointer;
+    }
+
+    .commentHeart:hover {
+      scale: 1.3;
+      transition: 0.5s;
+    }
+
+    .commentHeartBlack {
+      transform: translateX(-4px);
+      transition: all 0.5s;
+      opacity: 100%;
+      cursor: pointer;
+    }
+
+    .commentHeartBlack:hover {
+      scale: 1.3;
+      transition: 0.5s;
+    }
+  }
+
+  .commentIcons {
+    display: flex;
+    align-items: center;
+  }
+
+  .usersName {
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 550;
+    cursor: pointer;
+  }
+
+  .usersComment {
+    margin-left: 5px;
+    font-weight: 500;
+  }
+
+  .commentHeart {
+    width: 17px;
+    height: 17px;
+    transform: translateX(10px);
+    transition: 0.5s;
+    opacity: 0%;
+  }
+
+  .commentHeartBlack {
+    width: 17px;
+    height: 17px;
+    transform: translateX(10px);
+    transition: 0.5s;
+  }
+
+  .xButton {
+    margin-left: 5px;
+    transform: translateX(10px);
+    transition: 0.7s;
+    opacity: 0%;
+    background: none;
+  }
+
+  .fa-trash-alt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+  }
+
+  .commentLickBar {
+    display: flex;
+    align-items: center;
+  }
+
+  .fa-solid {
+    color: red;
+    cursor: pointer;
+  }
+
+  .fa-regular {
+    cursor: pointer;
+  }
+
+  .fa-solid:hover {
+    scale: 1.3;
+    transition: 0.4s;
+  }
+
+  .fa-regular:hover {
+    scale: 1.3;
+    transition: 0.4s;
+  }
+}
