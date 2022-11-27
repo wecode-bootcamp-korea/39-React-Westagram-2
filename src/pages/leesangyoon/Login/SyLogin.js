@@ -1,23 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss';
-
-let isIdVaild = false;
-let isPwVaild = false;
-let isAllVaild = false;
 
 export default function Login() {
   const navigate = useNavigate();
   const [idValue, setIdValue] = useState('');
   const [pwValue, setPwValue] = useState('');
+  const [isAllVaild, setIsAllValid] = useState(false);
 
-  function handleBtnActivate() {
-    if (isIdVaild && isPwVaild) {
-      isAllVaild = true;
+  useEffect(() => {
+    if (idValue.indexOf('@') !== -1 && pwValue.length >= 5) {
+      setIsAllValid(true);
     } else {
-      isAllVaild = false;
+      setIsAllValid(false);
     }
-  }
+  }, [idValue, pwValue]);
 
   function handleBtnClick() {
     if (isAllVaild) {
@@ -30,8 +27,6 @@ export default function Login() {
       idValue = event.target.value;
       return idValue;
     });
-    isIdVaild = idValue.indexOf('@') !== -1 ? true : false;
-    handleBtnActivate();
   }
 
   function handleBtnActivateByPw(event) {
@@ -39,9 +34,10 @@ export default function Login() {
       pwValue = event.target.value;
       return pwValue;
     });
-    isPwVaild = pwValue.length >= 5 ? true : false;
-    handleBtnActivate();
   }
+
+  console.log(idValue);
+  console.log(pwValue);
 
   return (
     <div className="container">
