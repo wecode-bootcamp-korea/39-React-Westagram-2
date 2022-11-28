@@ -1,0 +1,317 @@
+@import './../../../styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.disable {
+  color: #c1e0fd;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+/* nav */
+.nav {
+  @include flex(0, space-around, center);
+  width: 100vw;
+  border-bottom: 1px solid $borderColor;
+  background-color: white;
+
+  div {
+    width: 33%;
+  }
+
+  /* nav__logo */
+  &__logo {
+    @include flex(0, flex-start, 0);
+    padding-left: 5vw;
+  }
+
+  &__icon {
+    @include flex(0, center, 0);
+    margin: 20px 0px;
+  }
+
+  &__text {
+    @include flex(0, flex-end, 0);
+    margin: 20px 0px;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+  }
+
+  /* nav__search */
+  &__search {
+    @include flex(0, center, 0);
+
+    &__input {
+      width: 15vw;
+      height: 2.3vh;
+      border: 1px solid $borderColor;
+      background-color: $BgColor;
+    }
+
+    &__input:focus {
+      outline: none;
+    }
+
+    &__input::placeholder {
+      color: $borderColor;
+      text-align: center;
+    }
+  }
+
+  /* nav__side-icons */
+  &__side-icons {
+    @include flex(0, flex-end, 0);
+    padding-right: 5vw;
+
+    .icons {
+      margin: 5px;
+    }
+  }
+}
+
+/* main */
+.main {
+  @include flex(0, center, 0);
+  height: 120vh;
+  padding-left: 10vw;
+  background-color: $BgColor;
+
+  // 두 프로필 사진에 일괄적으로 적용하는 스타일
+  .profile-pic {
+    border: 2px solid #ff5a9a;
+    border-radius: 50%;
+  }
+
+  &__feeds {
+    @include flex(column, 0, 0);
+    width: 420px;
+  }
+
+  // main__stories
+  &__stories {
+    @include flex(0, 0, center);
+    width: 400px;
+    height: 100px;
+    margin-top: 40px;
+    border: 1px solid $borderColor;
+    background-color: white;
+
+    div {
+      @include flex(column, center, center);
+      height: 100%;
+      padding-left: 20px;
+
+      span {
+        margin-top: 5px;
+        font-size: 11px;
+      }
+    }
+  }
+
+  // main__article
+  &__article {
+    width: 400px;
+    margin-top: 40px;
+    border: 1px solid $borderColor;
+    background-color: white;
+
+    // main__article__header
+    &__header {
+      @include flex(0, 0, center);
+
+      &__profile {
+        @include flex(0, center, center);
+        width: 60px;
+        height: 60px;
+      }
+
+      &__nickname {
+        @include flex(0, 0, center);
+        width: auto;
+        height: 60px;
+        font-weight: 600;
+      }
+
+      &__more {
+        width: 30px;
+        height: 60px;
+      }
+    }
+
+    // main__article__media
+    &__media {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    #media {
+      width: 400px;
+    }
+
+    // main-article-reaction
+    &__reaction {
+      @include flex(0, 0, center);
+      height: 45px;
+      padding-left: 5px;
+    }
+
+    .reaction-icons {
+      margin-left: 10px;
+    }
+
+    #reaction-bookmark-icon {
+      margin-left: 65%;
+    }
+
+    // main__article__comment
+    &__comment {
+      @include flex(column, 0, 0);
+      height: 155px;
+      padding: 10px 15px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .comment-list {
+      margin: 10px 0px;
+
+      li {
+        position: relative;
+        margin-bottom: 5px;
+      }
+
+      .comment-icon:first-child {
+        margin-left: 10px;
+      }
+
+      .comment-icon:last-child {
+        position: absolute;
+        right: 0px;
+        margin-left: 10px;
+      }
+    }
+
+    // main__article__comment-input
+    &__comment-input {
+      @include flex(0, 0, 0);
+      display: flex;
+      height: 50px;
+      border-top: 0.5px solid $borderColor;
+    }
+
+    .smile-icon {
+      @include flex(0, center, center);
+      width: 50px;
+
+      #smile {
+        width: 30px;
+      }
+    }
+
+    .comment-form {
+      @include flex(0, center, center);
+      width: 370px;
+
+      form {
+        @include flex(0, center, center);
+      }
+
+      form input {
+        width: 280px;
+        border: none;
+      }
+
+      form input:focus {
+        outline: none;
+      }
+
+      form input::placeholder {
+        color: #828282;
+      }
+
+      form button {
+        width: 60px;
+        border: none;
+        background-color: inherit;
+        color: #0395f6;
+        font-size: 13px;
+        /* disabled if input have no value */
+      }
+    }
+  }
+
+  /* main__right */
+  &__right {
+    @include flex(column, 0, 0);
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 40vh;
+    margin-right: 5vw;
+
+    &__profile {
+      @include flex(0, 0, center);
+      position: relative;
+      width: 250px;
+      height: 70px;
+      margin-top: 40px;
+
+      &__pic img {
+        width: 50px;
+        margin: 10px;
+        border: 1px solid $borderColor;
+        border-radius: 50%;
+      }
+
+      &__name {
+        @include flex(column, 0, 0);
+      }
+
+      .profile-id {
+        margin: 1px 0px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .profile-name {
+        margin: 1px 0px;
+        color: #8e8e8e;
+        font-size: 14px;
+      }
+
+      &__change-btn {
+        position: absolute;
+        right: 0px;
+      }
+
+      &__change-btn button {
+        border: none;
+        background-color: $BgColor;
+        color: #0395f6;
+      }
+    }
+    /* main suggestions */
+    &__suggestions {
+      width: 250px;
+      height: 30vh;
+      margin-top: 20px;
+      padding: 0px 10px;
+
+      &__title {
+        @include flex(0, space-between, center);
+        height: 30px;
+      }
+
+      &__title span:first-child {
+        color: #8e8e8e;
+        font-size: 14px;
+      }
+
+      &__title span:last-child {
+        font-size: 13px;
+        font-weight: 600;
+      }
+    }
+  }
+}
